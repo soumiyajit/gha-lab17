@@ -1,0 +1,21 @@
+name: Reusable Test Template
+
+on:
+  workflow_call: # This makes the workflow "callable" by others
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Simulate Backend Testing
+        run: |
+          echo "Running unit tests for Academia Synapse..."
+          echo "Yay !! All tests passed!"

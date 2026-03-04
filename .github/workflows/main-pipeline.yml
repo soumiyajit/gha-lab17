@@ -1,0 +1,11 @@
+name: Main Pipeline
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  # This job "calls" the reusable template above
+  execute-tests:
+    uses: ./.github/workflows/reusable-test.yml
